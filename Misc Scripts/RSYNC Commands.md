@@ -1,8 +1,0 @@
-### RSYNC Commands
-
-Copy **files / folders** to a destination with progress:
-`rsync -ah --progress /path/to/source /path/to/destination/`
-
-Delete all **files / folders** from a source:
-`rsync -a --delete empty_dir/ /path/to/source`
-
