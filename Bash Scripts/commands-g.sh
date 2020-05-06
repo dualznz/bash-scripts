@@ -37,6 +37,8 @@ echo " "
 echo "${bold}###### please select a command to run ######${reset}"
 echo "  ${fgRed}${bold}1)${reset} ${bold}(Update / Upgrade)${reset} server"
 echo "  ${fgRed}${bold}2)${reset} Open ${bold}(fstab) configuration file"
+echo "  ${fgRed}${bold}3)${reset} Open ${bold}(samba) configuration file"
+echo "  ${fgRed}${bold}4)${reset} Open ${bold}(ssh) configuration file"
 echo "  ${fgRed}${bold}6)${reset} Exit"
 
 # commands
@@ -44,6 +46,8 @@ read n
 case $n in
   1) apt update && apt upgrade ;;
   2) nano /etc/fstab ;;
+  3) nano /etc/samba/smb.conf ;;
+  4) nano /etc/ssh/sshd.conf ;;
   6) exit ;;
   *) echo "${bold}${fgRed}invalid${reset} option selected" && ./commands-r.sh ;;
 esac
