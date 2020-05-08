@@ -45,9 +45,9 @@ echo "  ${fgRed}${bold}4)${reset} Restart ${bold}(all)${reset} docker containers
 echo "  ${fgRed}${bold}5)${reset} Kill ${bold}(all)${reset} docker containers"
 echo "  ${fgRed}${bold}6)${reset} ${bold}(SSH)${reset} into specific docker container"
 echo "  ${fgRed}${bold}7)${reset} ${bold}(Update / Upgrade)${reset} server"
-echo "  ${fgRed}${bold}8)${reset} Open ${bold}(fstab) configuration file"
-echo "  ${fgRed}${bold}9)${reset} Open ${bold}(samba) configuration file"
-echo "  ${fgRed}${bold}10)${reset} Open ${bold}(ssh) configuration file"
+echo "  ${fgRed}${bold}8)${reset} Open ${bold}(fstab)${reset} configuration file"
+echo "  ${fgRed}${bold}9)${reset} Open ${bold}(samba)${reset} configuration file"
+echo "  ${fgRed}${bold}10)${reset} Open ${bold}(ssh)${reset} configuration file"
 echo "  ${fgRed}${bold}15)${reset} Exit"
 
 # commands

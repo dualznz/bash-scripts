@@ -36,9 +36,9 @@ reset=$(tput sgr0)
 echo " "
 echo "${bold}###### please select a command to run ######${reset}"
 echo "  ${fgRed}${bold}1)${reset} ${bold}(Update / Upgrade)${reset} server"
-echo "  ${fgRed}${bold}2)${reset} Open ${bold}(fstab) configuration file"
-echo "  ${fgRed}${bold}3)${reset} Open ${bold}(samba) configuration file"
-echo "  ${fgRed}${bold}4)${reset} Open ${bold}(ssh) configuration file"
+echo "  ${fgRed}${bold}2)${reset} Open ${bold}(fstab)${reset} configuration file"
+echo "  ${fgRed}${bold}3)${reset} Open ${bold}(samba)${reset} configuration file"
+echo "  ${fgRed}${bold}4)${reset} Open ${bold}(ssh)${reset} configuration file"
 echo "  ${fgRed}${bold}6)${reset} Exit"
 
 # commands
