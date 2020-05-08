@@ -45,7 +45,10 @@ echo "  ${fgRed}${bold}4)${reset} Restart ${bold}(all)${reset} docker containers
 echo "  ${fgRed}${bold}5)${reset} Kill ${bold}(all)${reset} docker containers"
 echo "  ${fgRed}${bold}6)${reset} ${bold}(SSH)${reset} into specific docker container"
 echo "  ${fgRed}${bold}7)${reset} ${bold}(Update / Upgrade)${reset} server"
-echo "  ${fgRed}${bold}8)${reset} Exit"
+echo "  ${fgRed}${bold}8)${reset} Open ${bold}(fstab) configuration file"
+echo "  ${fgRed}${bold}9)${reset} Open ${bold}(samba) configuration file"
+echo "  ${fgRed}${bold}10)${reset} Open ${bold}(ssh) configuration file"
+echo "  ${fgRed}${bold}15)${reset} Exit"
 
 # commands
 read n
@@ -57,7 +60,10 @@ case $n in
   5) docker kill $(docker ps -q) && ./commands-r.sh;;
   6) echo "${bold}Run the following command:${reset} docker exec -it ${bold}container_name${reset} bash";;
   7) apt update && apt upgrade;;
-  8) exit;;
+  8) nano /etc/fstab ;;
+  9) nano /etc/samba/smb.conf ;;
+  10) nano /etc/ssh/sshd.conf ;;
+  15) exit;;
   *) echo "${bold}${fgRed}invalid${reset} option selected" && ./commands-r.sh;;
 esac
 
