@@ -45,7 +45,7 @@ echo "  ${fgRed}${bold}7)${reset} Kill ${bold}(all)${reset} docker containers"
 echo "  ${fgRed}${bold}8)${reset} Goto docker ${bold}(appdata)${reset} directory"
 echo "  ${fgRed}${bold}9)${reset} Upgrade ${bold}(dockstarter)${reset} system files"
 echo "  ${fgRed}${bold}10)${reset} Update ${bold}(dockstarter)${reset} containers to latest build(s)"
-echo "  ${fgRed}${bold}11)${reset} Exit"
+echo "  ${fgRed}${bold}15)${reset} Exit"
 
 # commands
 read n
@@ -60,7 +60,7 @@ case $n in
   8) cd ~/.config/appdata && ls && exec bash;;
   9) ds -u && ./commands-u.sh;;
   10) ds -c pull && ds -c up && ./commands-u.sh;;
-  11) exit;;
+  15) exit;;
   *) echo "${bold}${fgRed}invalid${reset} option selected" && ./commands-u.sh;;
 esac
 
