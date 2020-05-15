@@ -45,7 +45,7 @@ echo "  ${fgRed}${bold}7)${reset} Kill ${bold}(all)${reset} docker containers"
 echo "  ${fgRed}${bold}8)${reset} Goto docker ${bold}(appdata)${reset} directory"
 echo "  ${fgRed}${bold}9)${reset} Upgrade ${bold}(dockstarter)${reset} system files"
 echo "  ${fgRed}${bold}10)${reset} Update ${bold}(dockstarter)${reset} containers to latest build(s)"
-echo "  ${fgRed}${bold}111)${reset} Kill & restart ${bold}(docker)${reset} container(s)"
+echo "  ${fgRed}${bold}11)${reset} Kill & restart ${bold}(docker)${reset} container(s)"
 echo "  ${fgRed}${bold}15)${reset} Exit"
 
 # commands
