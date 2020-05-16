@@ -63,7 +63,7 @@ case $n in
   9) ds -u && ./commands-u.sh;;
   10) ds -c pull && ds -c up && ./commands-u.sh;;
   11) cd ~/.docker/compose && docker-compose down -v && docker-compose up -d ;;
-  12) echo "To tail a log file in real type type: tail -f filename.log" ;;
+  12) echo "To tail a log file in real type type: ${bold}tail -f filename.log${reset}" ;;
   17) exit;;
   *) echo "${bold}${fgRed}invalid${reset} option selected" && ./commands-u.sh;;
 esac
