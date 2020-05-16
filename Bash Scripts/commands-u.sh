@@ -46,7 +46,8 @@ echo "  ${fgRed}${bold}8)${reset} Goto docker ${bold}(appdata)${reset} directory
 echo "  ${fgRed}${bold}9)${reset} Upgrade ${bold}(dockstarter)${reset} system files"
 echo "  ${fgRed}${bold}10)${reset} Update ${bold}(dockstarter)${reset} containers to latest build(s)"
 echo "  ${fgRed}${bold}11)${reset} Kill & restart ${bold}(docker)${reset} container(s)"
-echo "  ${fgRed}${bold}15)${reset} Exit"
+echo "  ${fgRed}${bold}12)${reset} Tail ${bold}(log)${reset} file instruction(s)"
+echo "  ${fgRed}${bold}17)${reset} Exit"
 
 # commands
 read n
@@ -62,7 +63,8 @@ case $n in
   9) ds -u && ./commands-u.sh;;
   10) ds -c pull && ds -c up && ./commands-u.sh;;
   11) cd ~/.docker/compose && docker-compose down -v && docker-compose up -d ;;
-  15) exit;;
+  12) echo "To tail a log file in real type type: tail -f filename.log" ;;
+  17) exit;;
   *) echo "${bold}${fgRed}invalid${reset} option selected" && ./commands-u.sh;;
 esac
 
