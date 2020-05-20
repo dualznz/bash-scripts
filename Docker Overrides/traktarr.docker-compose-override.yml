@@ -1,3 +1,5 @@
+# Traktarr
+# Addtional image tag: none
 # https://hub.docker.com/r/cloudb0x/traktarr
 
 version: "3.4" # this must match the version in docker-compose.yml

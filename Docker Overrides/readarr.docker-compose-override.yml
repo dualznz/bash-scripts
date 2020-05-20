@@ -1,3 +1,5 @@
+# Readarr
+# Addtional image tag: none (EACH BUILD WILL REQUIRE INTERNAL DB RESET)
 # https://hub.docker.com/r/hotio/readarr
 
 version: "3.4" # this must match the version in docker-compose.yml

@@ -1,3 +1,5 @@
+# Timemachine Server
+# Addtional image tag: smb
 # https://hub.docker.com/r/mbentley/timemachine
 
 version: "3.4" # this must match the version in docker-compose.yml
