@@ -6,3 +6,4 @@ you then call certbot to that configuration eg test.domainname.com
 
 Command:
 certbot -d test.domainname.com #full domain name path
+then select "1" to not force redirect
