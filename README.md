@@ -1,6 +1,5 @@
-## Ubuntu Bash Scripts & DockStarter Overrides
+## Ubuntu Bash Script / Various Commands & Docker Overrides
 
-The following files are various scripts and overrides that i use day to day & they may help you.
-
-These scripts are based around simplifying commands instead of writing out commands in Linux.
-
+A collection of bash(shell) scripts for various system operations on
+debian(ubuntu) kernal as well as Docker overrides for custom projects on
+dockerhub.
