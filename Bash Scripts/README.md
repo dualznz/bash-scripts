@@ -13,3 +13,17 @@ Then simply type the following:
 ```
 
 **prefix = u,r,p,g**
+
+
+
+Add **commands-u.sh** to your
+
+```shell
+/home/username/
+```
+
+directory.
+
+
+
+In commands-r.sh there is a field called *USERACCOUNT* under <u>VARIABLES</u> you set this to your user account.
