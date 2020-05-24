@@ -1,0 +1,22 @@
+# Ubooquity
+# Addtional image tag: none
+# https://hub.docker.com/r/linuxserver/ubooquity
+
+version: "3.4" # this must match the version in docker-compose.yml
+services:
+  ubooquity:
+    container_name: ubooquity
+    image: linuxserver/ubooquity
+    restart: unless-stopped
+    ports:
+      - "2202:2202"
+      - "2203:2203"
+    environment:
+      - TZ=${TZ}
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - MAXMEM=maxmem
+    volumes:
+      - ${DOCKERCONFDIR}/ubooquity/config:/config
+      - ${DOCKERCONFDIR}/ubooquity/comics:/comics
+      - ${DOCKERCONFDIR}/ubooquity/raw-files:/files
