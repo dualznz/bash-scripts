@@ -44,7 +44,7 @@ echo "  ${fgRed}${bold}6)${reset} Exit"
 # commands
 read n
 case $n in
-  1) apt update && apt upgrade ;;
+  1) apt update && apt upgrade -y ;;
   2) nano /etc/fstab ;;
   3) nano /etc/samba/smb.conf ;;
   4) nano /etc/ssh/sshd.conf ;;

@@ -52,20 +52,20 @@ echo "  ${fgRed}${bold}17)${reset} Exit"
 # commands
 read n
 case $n in
-  1) grep _ENABLED= ~/.docker/compose/.env && ./commands-u.sh;;
-  2) sudo nano ~/.docker/compose/.env && ./commands-u.sh;;
-  3) sudo nano ~/.docker/compose/docker-compose.override.yml && ./commands-u.sh;;
-  4) sudo ds && ./commands-u.sh;;
-  5) sudo ds -c && ./commands-u.sh;;
-  6) docker restart $(docker ps -a -q) && ./commands-u.sh;;
-  7) docker kill $(docker ps -q) && ./commands-u.sh;;
-  8) cd ~/.config/appdata && ls && exec bash;;
-  9) ds -u && ./commands-u.sh;;
-  10) ds -c pull && ds -c up && ./commands-u.sh;;
+  1) grep _ENABLED= ~/.docker/compose/.env && ./commands-u.sh ;;
+  2) sudo nano ~/.docker/compose/.env && ./commands-u.sh ;;
+  3) sudo nano ~/.docker/compose/docker-compose.override.yml && ./commands-u.sh ;;
+  4) sudo ds && ./commands-u.sh ;;
+  5) sudo ds -c && ./commands-u.sh ;;
+  6) docker restart $(docker ps -a -q) && ./commands-u.sh ;;
+  7) docker kill $(docker ps -q) && ./commands-u.sh ;;
+  8) cd ~/.config/appdata && ls && exec bash ;;
+  9) ds -u && ./commands-u.sh ;;
+  10) ds -c pull && ds -c up && ./commands-u.sh ;;
   11) cd ~/.docker/compose && docker-compose down -v && docker-compose up -d ;;
   12) echo "To tail a log file in real type type: ${bold}tail -f filename.log${reset}" ;;
-  17) exit;;
-  *) echo "${bold}${fgRed}invalid${reset} option selected" && ./commands-u.sh;;
+  17) exit ;;
+  *) echo "${bold}${fgRed}invalid${reset} option selected" && ./commands-u.sh ;;
 esac
 
 # end

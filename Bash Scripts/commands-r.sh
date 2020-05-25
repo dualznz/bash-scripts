@@ -54,17 +54,17 @@ echo "  ${fgRed}${bold}15)${reset} Exit"
 read n
 case $n in
   1) su - $USERACCOUNT;;
-  2) docker ps -a && ./commands-r.sh;;
-  3) grep _ENABLED= ~/.docker/compose/.env && ./commands-d.sh;;
-  4) docker restart $(docker ps -a -q) && ./commands-r.sh;;
-  5) docker kill $(docker ps -q) && ./commands-r.sh;;
-  6) echo "${bold}Run the following command:${reset} docker exec -it ${bold}container_name${reset} bash";;
-  7) apt update && apt upgrade;;
+  2) docker ps -a && ./commands-r.sh ;;
+  3) grep _ENABLED= ~/.docker/compose/.env && ./commands-d.sh ;;
+  4) docker restart $(docker ps -a -q) && ./commands-r.sh ;;
+  5) docker kill $(docker ps -q) && ./commands-r.sh ;;
+  6) echo "${bold}Run the following command:${reset} docker exec -it ${bold}container_name${reset} bash" ;;
+  7) apt update && apt upgrade -y ;;
   8) nano /etc/fstab ;;
   9) nano /etc/samba/smb.conf ;;
   10) nano /etc/ssh/sshd.conf ;;
-  15) exit;;
-  *) echo "${bold}${fgRed}invalid${reset} option selected" && ./commands-r.sh;;
+  15) exit ;;
+  *) echo "${bold}${fgRed}invalid${reset} option selected" && ./commands-r.sh ;;
 esac
 
 #end
