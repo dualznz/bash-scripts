@@ -1,0 +1,27 @@
+# Speedtest Double Commander
+# Addtional image tag: none
+# https://hub.docker.com/r/linuxserver/doublecommander
+
+version: "3.4" # this must match the version in docker-compose.yml
+services:
+  speedtest-tracker:
+    container_name: speedtest-tracker
+    image: henrywhitaker3/speedtest-tracker
+    hostname: ${DOCKERHOSTNAME}
+    environment:
+      - PGID=${PGID}
+      - PUID=${PUID}
+      - TZ=${TZ}
+    ports:
+      - "8765:80"
+    restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-file: ${DOCKERLOGGING_MAXFILE}
+        max-size: ${DOCKERLOGGING_MAXSIZE}
+    volumes:
+    - /etc/localtime:/etc/localtime:ro
+    - ${DOCKERCONFDIR}/speedtest_tracker/config:/config
+    - ${DOCKERCONFDIR}/speedtest_tracker/shared:/shared
+    - ${DOCKERCONFDIR}/speedtest_tracker/data:/data
