@@ -1,0 +1,9 @@
+# Bazarr With Subsync
+# Addtional image tag: subsync
+# https://hub.docker.com/r/hotio/bazarr
+# https://github.com/morpheus65535/bazarr/wiki/Installation-Docker#hotiobazarr
+
+version: "3.4" # this must match the version in docker-compose.yml
+services:
+  bazarrr:
+    image: hotio/bazarr:stable-subsync

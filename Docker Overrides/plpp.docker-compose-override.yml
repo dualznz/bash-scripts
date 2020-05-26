@@ -1,0 +1,23 @@
+# PLPP - PHP Library Presenter for PLEX
+# Addtional image tag: none
+# https://hub.docker.com/r/tronyx/docker-plpp
+
+version: "3.4" # this must match the version in docker-compose.yml
+services:
+  plpp:
+    container_name: plpp
+    image: tronyx/docker-plpp
+    hostname: ${DOCKERHOSTNAME}
+    restart: unless-stopped
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+    ports:
+      - "8383:80"
+    logging:
+      driver: json-file
+        options:
+          max-file: ${DOCKERLOGGING_MAXFILE}
+          max-size: ${DOCKERLOGGING_MAXSIZE}
+    volumes:
+      - ${DOCKERCONFDIR}/plpp/config:/config

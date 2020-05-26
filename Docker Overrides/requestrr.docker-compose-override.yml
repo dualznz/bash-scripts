@@ -1,0 +1,23 @@
+# Requestrr
+# Addtional image tag: none
+# https://hub.docker.com/r/darkalfx/requestrr
+
+version: "3.4" # this must match the version in docker-compose.yml
+services:
+  requestrr:
+    container_name: requestrr
+    image: darkalfx/requestrr
+    environment:
+      - TZ=${TZ}
+    ports:
+      - "4545:4545"
+    restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-file: ${DOCKERLOGGING_MAXFILE}
+        max-size: ${DOCKERLOGGING_MAXSIZE}
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${DOCKERCONFDIR}/requestrr:/root/config
+      - ${DOCKERSHAREDDIR}:/shared

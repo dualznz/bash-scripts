@@ -1,0 +1,24 @@
+# Booksonic
+# Addtional image tag: latest
+# https://hub.docker.com/r/linuxserver/booksonic
+
+version: "3.4" # this must match the version in docker-compose.yml
+services:
+  booksonic:
+    image: linuxserver/booksonic:latest
+    container_name: booksonic
+    hostname: booksonic
+    restart: unless-stopped
+    ports:
+      - "${BOOKSONIC_PORT_4040}:4040"
+    environment:
+      - CONTEXT_PATH=${BOOKSONIC_CONTEXT_PATH}
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${DOCKERCONFDIR}/booksonic:/config
+      - ${DOCKERSHAREDDIR}:/shared
+      - ${MEDIADIR_AUDIOBOOKS}:/books
+      - ${MEDIADIR_MUSIC}:/podcasts

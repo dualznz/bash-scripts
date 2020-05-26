@@ -23,5 +23,5 @@ services:
     volumes:
     - /etc/localtime:/etc/localtime:ro
     - ${DOCKERCONFDIR}/speedtest_tracker/config:/config
-    - ${DOCKERCONFDIR}/speedtest_tracker/shared:/shared
+    - ${DOCKERSHAREDDIR}/shared:/shared
     - ${DOCKERCONFDIR}/speedtest_tracker/data:/data

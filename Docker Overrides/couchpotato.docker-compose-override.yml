@@ -1,0 +1,21 @@
+# Couchpotato
+# Addtional image tag: none
+# https://hub.docker.com/r/linuxserver/couchpotato
+
+version: "3.4" # this must match the version in docker-compose.yml
+services:
+  couchpotato:
+    image: linuxserver/couchpotato
+    container_name: couchpotato
+    restart: unless-stopped
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - UMASK_SET=022
+    ports:
+      - "5050:5050"
+    volumes:
+      - ${DOCKERCONFDIR}/couchpotato/config:/config
+      - ${DOWNLOADSDIR}:/downloads
+      - ${MEDIADIR_MOVIES}:/movies

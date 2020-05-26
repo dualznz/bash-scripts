@@ -1,0 +1,21 @@
+# Folding@Home
+# Addtional image tag: none
+# https://hub.docker.com/r/linuxserver/foldingathome
+
+version: "3.4" # this must match the version in docker-compose.yml
+services:
+  foldingathome:
+    container_name: foldingathome
+    image: linuxserver/foldingathome
+    environment:
+      - PGID=${PGID}
+      - PUID=${PUID}
+      - TZ=${TZ}
+    ports:
+      - "7396:7396"
+      - "36330:36330" #optional
+    restart: unless-stopped
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${DOCKERCONFDIR}/foldingathome:/root/config
+      - ${DOCKERSHAREDDIR}:/shared

@@ -1,0 +1,22 @@
+# Calibre
+# Addtional image tag: none
+# https://hub.docker.com/r/linuxserver/calibre
+
+version: "3.4" # this must match the version in docker-compose.yml
+services:
+  calibre:
+    container_name: calibre
+    image: linuxserver/calibre
+    restart: unless-stopped
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - GUAC_USER=USERNAME_HERE
+      - GUAC_PASS=RANDOM_32_CHAR_STRING
+      - UMASK_SET=022
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+    volumes:
+      - ${DOCKERCONFDIR}calibre:/config
