@@ -1,0 +1,14 @@
+# Pseudotv
+# Addtional image tag: none
+# https://hub.docker.com/r/defendore/pseudotv
+# https://gitlab.com/DEFENDORe/pseudotv-plex
+
+version: "3.4" # this must match the version in docker-compose.yml
+services:
+  pseudotv:
+    container_name: pseudotv
+    image: defendore/pseudotv
+    ports:
+      - "15615:8000"
+    volumes:
+      - ${DOCKERCONFDIR}/pseudotv:/home/node/app/.pseudotv
