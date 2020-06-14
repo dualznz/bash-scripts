@@ -1,0 +1,21 @@
+# WebDAV Server
+# Addtional image tag: none
+# https://hub.docker.com/r/bytemark/webdav/
+
+version: "3.4" # this must match the version in docker-compose.yml
+services:
+  webdav:
+    container_name: webdav-Server
+    image: bytemark/webdav
+    restart: always
+    ports:
+      - "32792:80"
+    environment:
+      - AUTH_TYPE=Basic # Basic = HTTPS, Digest = HTTP
+      - USERNAME=usernamegoeshere
+      - PASSWORD=passwordgoeshere
+      - TZ=${TZ}
+      - PUID=${PUID}
+      - PGID=${PGID}
+    volumes:
+      - ${DOCKERCONFDIR}/webdav/var/lib/dav:/var/lib/dav
