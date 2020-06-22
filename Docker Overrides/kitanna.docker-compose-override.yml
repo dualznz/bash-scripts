@@ -1,0 +1,17 @@
+# Kitana
+# Addtional image tag: none
+# https://github.com/pannal/Kitana/blob/master/README.md
+
+version: "3.4" # this must match the version in docker-compose.yml
+services:
+  kitana:
+    container_name: kitana
+    image: pannal/kitana:latest
+    ports:
+      - "31337:31337"
+    environment:
+      - TZ=${TZ}
+      - PUID=${PUID}
+      - PGID=${PGID}
+    volumes:
+      - ${DOCKERCONFDIR}/kitana/data:/app/data
