@@ -1,0 +1,16 @@
+# phpMyAdmin
+# Addtional image tag: latest
+# https://hub.docker.com/r/phpmyadmin/phpmyadmin/
+
+version: "3.4" # this must match the version in docker-compose.yml
+services:
+  phpmyadmin:
+    container_name: phpmyadmin
+    image: phpmyadmin/phpmyadmin:latest
+    ports:
+      - '39692:80'
+    environment:
+      - TZ=${TZ}
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - PMA_HOST=dbhost
