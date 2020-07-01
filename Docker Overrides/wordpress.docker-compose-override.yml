@@ -1,0 +1,18 @@
+# Wordpress
+# Addtional image tag: latest
+# https://hub.docker.com/_/wordpress
+
+version: "3.4" # this must match the version in docker-compose.yml
+services:
+  wordpress:
+    image: wordpress
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: exampleuser
+      WORDPRESS_DB_PASSWORD: examplepass
+      WORDPRESS_DB_NAME: exampledb
+    volumes:
+      - /Users/seekaplayer/projects/Client\Work/wedding:/var/www/html
