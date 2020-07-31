@@ -39,6 +39,7 @@ echo "  ${fgRed}${bold}1)${reset} ${bold}(Update / Upgrade)${reset} server"
 echo "  ${fgRed}${bold}2)${reset} Open ${bold}(fstab)${reset} configuration file"
 echo "  ${fgRed}${bold}3)${reset} Open ${bold}(samba)${reset} configuration file"
 echo "  ${fgRed}${bold}4)${reset} Open ${bold}(ssh)${reset} configuration file"
+echo "  ${fgRed}${bold}5)${reset} Auto-remove old ${bold}linux${reset} kernal(s) with purge"
 echo "  ${fgRed}${bold}6)${reset} Exit"
 
 # commands
@@ -48,6 +49,7 @@ case $n in
   2) nano /etc/fstab ;;
   3) nano /etc/samba/smb.conf ;;
   4) nano /etc/ssh/sshd.conf ;;
+  5) apt autoremove --purge ;;
   6) exit ;;
   *) echo "${bold}${fgRed}invalid${reset} option selected" && ./commands-r.sh ;;
 esac
