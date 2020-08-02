@@ -39,8 +39,9 @@ echo "  ${fgRed}${bold}1)${reset} ${bold}(Update / Upgrade)${reset} server"
 echo "  ${fgRed}${bold}2)${reset} Open ${bold}(fstab)${reset} configuration file"
 echo "  ${fgRed}${bold}3)${reset} Open ${bold}(samba)${reset} configuration file"
 echo "  ${fgRed}${bold}4)${reset} Open ${bold}(ssh)${reset} configuration file"
-echo "  ${fgRed}${bold}5)${reset} Auto-remove old ${bold}linux${reset} kernal(s) with purge"
-echo "  ${fgRed}${bold}6)${reset} Exit"
+echo "  ${fgRed}${bold}5)${reset} Auto-remove old ${bold}(linux)${reset} kernal(s) with purge"
+echo "  ${fgRed}${bold}5)${reset} Truncate ${bold}(meta-release-lts)${reset} table"
+echo "  ${fgRed}${bold}15)${reset} Exit"
 
 # commands
 read n
@@ -50,8 +51,9 @@ case $n in
   3) nano /etc/samba/smb.conf ;;
   4) nano /etc/ssh/sshd.conf ;;
   5) apt autoremove --purge ;;
-  6) exit ;;
-  *) echo "${bold}${fgRed}invalid${reset} option selected" && ./commands-r.sh ;;
+  6) sudo truncate -s 0 /var/lib/ubuntu-release-upgrader/release-upgrade-available ;;
+  15) exit ;;
+  *) echo "${bold}${fgRed}invalid${reset} option selected" && ./commands-g.sh ;;
 esac
 
 #end
