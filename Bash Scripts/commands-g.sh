@@ -40,7 +40,7 @@ echo "  ${fgRed}${bold}2)${reset} Open ${bold}(fstab)${reset} configuration file
 echo "  ${fgRed}${bold}3)${reset} Open ${bold}(samba)${reset} configuration file"
 echo "  ${fgRed}${bold}4)${reset} Open ${bold}(ssh)${reset} configuration file"
 echo "  ${fgRed}${bold}5)${reset} Auto-remove old ${bold}(linux)${reset} kernal(s) with purge"
-echo "  ${fgRed}${bold}5)${reset} Truncate ${bold}(meta-release-lts)${reset} table"
+echo "  ${fgRed}${bold}6)${reset} Truncate ${bold}(meta-release-lts)${reset} table"
 echo "  ${fgRed}${bold}15)${reset} Exit"
 
 # commands
