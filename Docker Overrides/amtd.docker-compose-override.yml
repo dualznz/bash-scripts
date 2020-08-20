@@ -1,0 +1,29 @@
+# AMTD - Automated Movie Trailer Downloader
+# Addtional image tag: none
+# https://hub.docker.com/r/randomninjaatk/amtd
+
+version: "3.4" # this must match the version in docker-compose.yml
+services:
+  speedtest:
+    container_name: amtd
+    image: randomninjaatk/amtd
+    hostname: ${DOCKERHOSTNAME}
+    environment:
+      - PGID=${PGID}
+      - PUID=${PUID}
+      - TZ=${TZ}
+      - AUTOSTART=true
+      - RadarrUrl=http://127.0.0.1:8686
+      - RadarrAPIkey=RADARR_API_KEY
+      - CountryCode=us
+      - videoformat="--format bestvideo[vcodec*=avc1]+bestaudio"
+      - subtitlelanguage="en"
+      - FilePermissions=666
+    restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-file: ${DOCKERLOGGING_MAXFILE}
+        max-size: ${DOCKERLOGGING_MAXSIZE}
+    volumes:
+      - ${DOCKERCONFDIR}/tmtd/config:/config

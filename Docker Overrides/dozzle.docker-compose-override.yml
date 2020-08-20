@@ -1,0 +1,18 @@
+# Dozzle
+# Addtional image tag: none
+# https://hub.docker.com/r/amir20/dozzle
+
+version: "3.4" # this must match the version in docker-compose.yml
+services:
+  dozzle:
+    container_name: dozzle
+    image: amir20/dozzle:latest
+    hostname: ${DOCKERHOSTNAME}
+    environment:
+      - PGID=${PGID}
+      - PUID=${PUID}
+      - TZ=${TZ}
+    ports:
+      - 8888:8080
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
