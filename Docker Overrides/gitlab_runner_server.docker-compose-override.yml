@@ -1,0 +1,15 @@
+# Dozzle
+# Addtional image tag: none
+# https://hub.docker.com/r/amir20/dozzle
+
+version: "3.4" # this must match the version in docker-compose.yml
+services:
+  gitlab-runner:
+    image: gitlab/gitlab-runner:latest
+    container_name: gitlab-runner
+    restart: always
+    ports:
+      - 8093:8093
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ${DOCKERCONFDIR}/gitlab:/etc/gitlab-runner
