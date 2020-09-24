@@ -1,6 +1,6 @@
-# Dozzle
-# Addtional image tag: none
-# https://hub.docker.com/r/amir20/dozzle
+# GitLab Runner CI/CD
+# Addtional image tag: latest
+#https://hub.docker.com/r/gitlab/gitlab-runner
 
 version: "3.4" # this must match the version in docker-compose.yml
 services:

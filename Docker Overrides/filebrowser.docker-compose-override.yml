@@ -1,0 +1,20 @@
+# Filebrowser
+# Addtional image tag: latest
+# https://hub.docker.com/r/filebrowser/filebrowser
+
+version: "3.4" # this must match the version in docker-compose.yml
+services:
+  filebrowser:
+    image: hurlenko/filebrowser
+    container_name: filebrowser
+    user: ${PUID}:${PGID}
+    restart: always
+    environment:
+      - PGID=${PGID}
+      - PUID=${PUID}
+      - TZ=${TZ}
+      - FB_BASEURL=/filebrowser
+    ports:
+      - 40204:8080
+    volumes:
+      - /path/to/main/media/dir:/data

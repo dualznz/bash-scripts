@@ -1,0 +1,11 @@
+# Excalidraw
+# Addtional image tag: latest
+# https://hub.docker.com/r/excalidraw/excalidraw
+
+version: "3.4" # this must match the version in docker-compose.yml
+services:
+  excalidraw:
+    image: excalidraw/excalidraw:latest
+    container_name: excalidraw
+    ports:
+      - 39338:80
