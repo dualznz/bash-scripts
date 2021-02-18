@@ -7,7 +7,18 @@ services:
   readarr:
     container_name: readarr
     image: hotio/readarr
+    hostname: ${DOCKERHOSTNAME}
+    environment:
+      - PGID=${PGID}
+      - PUID=${PUID}
+      - TZ=${TZ}
     ports:
-      - "8787:8787"
+      - 8787:8787
+    logging:
+      driver: json-file
+      options:
+        max-file: ${DOCKERLOGGING_MAXFILE}
+        max-size: ${DOCKERLOGGING_MAXSIZE}
+    restart: unless-stopped
     volumes:
       - ${DOCKERCONFDIR}/readarr:/config

@@ -41,6 +41,7 @@ echo "  ${fgRed}${bold}3)${reset} Open ${bold}(samba)${reset} configuration file
 echo "  ${fgRed}${bold}4)${reset} Open ${bold}(ssh)${reset} configuration file"
 echo "  ${fgRed}${bold}5)${reset} Auto-remove old ${bold}(linux)${reset} kernal(s) with purge"
 echo "  ${fgRed}${bold}6)${reset} Truncate ${bold}(meta-release-lts)${reset} table"
+echo "  ${fgRed}${bold}7)${reset} Stop ${bold}(docker containers & mount drives / restart docker containers)${reset}"
 echo "  ${fgRed}${bold}15)${reset} Exit"
 
 # commands
@@ -52,6 +53,7 @@ case $n in
   4) nano /etc/ssh/sshd.conf ;;
   5) apt autoremove --purge ;;
   6) sudo truncate -s 0 /var/lib/ubuntu-release-upgrader/release-upgrade-available ;;
+  7) docker kill $(docker ps -q) && mount -a && docker restart $(docker ps -a -q) && ./commands-r.sh ;;
   15) exit ;;
   *) echo "${bold}${fgRed}invalid${reset} option selected" && ./commands-g.sh ;;
 esac
